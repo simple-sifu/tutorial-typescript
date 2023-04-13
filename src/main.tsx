@@ -1,9 +1,41 @@
-import React from 'react'
+import React,{useState, Fragment, FC} from 'react'
 import ReactDOM from 'react-dom/client'
-import GuestList from './state/GuestList'
+import UserSearch from './state/UserSearch'
 
-const App = () => {
-  return <GuestList />
+const Users = [
+  { 
+    name: 'Tommy',
+    age: 40
+  },
+  {
+    name: "Sarah",
+    age: 70
+  },
+  {
+    name: "Carol",
+    age: 30
+  }
+]
+
+const App:FC = () => {
+
+  const [name, setName] = useState('');
+  const [user, setUser] = useState<{name: string, age: number} | undefined>();
+
+  const clickHandler = () => {
+    const foundUser = Users.find(user => user.name.toLowerCase() === name.toLowerCase())
+    setUser(foundUser);
+  }
+  return (
+    <Fragment>
+        <UserSearch />
+
+        <input value={name} onChange={(e) => setName(e.target.value)}/>
+        <button onClick = {clickHandler}>Find User</button>
+        <div>{user && `name: ${user.name},  age: ${user.age}` }</div>
+    </Fragment>
+  )
+
 }
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
