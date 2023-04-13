@@ -4,6 +4,8 @@ interface ChildProps {
     children?: React.ReactNode;
 }
 
+// typescript doesnt know this is a React Component
+// This component can not handle children nodes !!!
 export const Child = ({color, onClick}: ChildProps) => {
     return (
         <div>
@@ -15,6 +17,7 @@ export const Child = ({color, onClick}: ChildProps) => {
 
 }
 
+// typescript knows this is a React Component and can have 4 React component properties 
 export const ChildFC: React.FC<ChildProps> = (({color, onClick, children}) => {
     return (
         <div>

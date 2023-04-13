@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import GuestList from './state/GuestList'
 
 const App = () => {
-  return <div><h1>Hello World</h1></div>
+  return <GuestList />
 }
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
