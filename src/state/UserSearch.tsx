@@ -35,7 +35,9 @@ const UserSearch = () => {
         <button onClick={clickHandler}>Find User</button>
         <br/>
         <br/>
+        <div>
         {user && `Name: ${user.name} and Age: ${user.age}`}
+        </div>
     </Fragment>
 }
 
