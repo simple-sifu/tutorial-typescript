@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import UserSearch from './state/UserSearch'
+import UserSearch from './refs/UserSearch'
 import EventComponent from './Events/EventComponent'
 
 const App = () => {
@@ -9,6 +9,6 @@ const App = () => {
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <EventComponent />
+    <UserSearch />
   </React.StrictMode>,
 )
